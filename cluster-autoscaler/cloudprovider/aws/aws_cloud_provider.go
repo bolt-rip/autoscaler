@@ -103,7 +103,7 @@ func (aws *awsCloudProvider) NodeGroupForNode(node *apiv1.Node) (cloudprovider.N
 	}
 	ref, err := AwsRefFromProviderId(node.Spec.ProviderID)
 	if err != nil {
-		return nil, err
+		return nil, nil
 	}
 	asg := aws.awsManager.GetAsgForInstance(*ref)
 
